@@ -1,0 +1,14 @@
+D:\Projects\HaiLong\QuanlyDontu\QuanlyDontu\bin\Debug\QuanlyDontu.exe.config
+D:\Projects\HaiLong\QuanlyDontu\QuanlyDontu\bin\Debug\QuanlyDontu.exe
+D:\Projects\HaiLong\QuanlyDontu\QuanlyDontu\bin\Debug\QuanlyDontu.pdb
+D:\Projects\HaiLong\QuanlyDontu\QuanlyDontu\bin\Debug\EntityFramework.dll
+D:\Projects\HaiLong\QuanlyDontu\QuanlyDontu\bin\Debug\EntityFramework.xml
+D:\Projects\HaiLong\QuanlyDontu\QuanlyDontu\obj\Debug\QuanlyDontu.csprojAssemblyReference.cache
+D:\Projects\HaiLong\QuanlyDontu\QuanlyDontu\obj\Debug\QuanlyDontu.AccountInfo.resources
+D:\Projects\HaiLong\QuanlyDontu\QuanlyDontu\obj\Debug\QuanlyDontu.Login.resources
+D:\Projects\HaiLong\QuanlyDontu\QuanlyDontu\obj\Debug\QuanlyDontu.MainForm.resources
+D:\Projects\HaiLong\QuanlyDontu\QuanlyDontu\obj\Debug\QuanlyDontu.csproj.GenerateResource.cache
+D:\Projects\HaiLong\QuanlyDontu\QuanlyDontu\obj\Debug\QuanlyDontu.csproj.CoreCompileInputs.cache
+D:\Projects\HaiLong\QuanlyDontu\QuanlyDontu\obj\Debug\QuanlyDontu.csproj.CopyComplete
+D:\Projects\HaiLong\QuanlyDontu\QuanlyDontu\obj\Debug\QuanlyDontu.exe
+D:\Projects\HaiLong\QuanlyDontu\QuanlyDontu\obj\Debug\QuanlyDontu.pdb

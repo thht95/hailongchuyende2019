@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TestDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="tblDontu">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ten" Type="nvarchar" MaxLength="50" />
+    <Property Name="Noidung" Type="nvarchar" MaxLength="2000" />
+    <Property Name="Ngaytao" Type="datetime" />
+    <Property Name="Ngaycapnhat" Type="datetime" />
+    <Property Name="FK_LoaiDonTuID" Type="int" />
+    <Property Name="FK_NhanvienID" Type="int" />
+    <Property Name="FK_SinhvienID" Type="int" />
+    <Property Name="Trangthai" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tblLoaiDontu">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenLoai" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblNhanvien">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ma_nhan_vien" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="mat_khau" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="100" />
+    <Property Name="ho_va_ten" Type="nvarchar" MaxLength="100" />
+    <Property Name="so_dien_thoai" Type="int" />
+    <Property Name="FK_PhongbanID" Type="int" />
+  </EntityType>
+  <EntityType Name="tblPhongban">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ma_phong_ban" Type="nvarchar" MaxLength="1000" />
+    <Property Name="Ten_phong_ban" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="tblSinhvien">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ma_sinh_vien" Type="nvarchar" MaxLength="50" />
+    <Property Name="mat_khau" Type="nvarchar" MaxLength="50" />
+    <Property Name="email" Type="nvarchar" MaxLength="1000" />
+    <Property Name="ho_va_ten" Type="nvarchar" MaxLength="1000" />
+    <Property Name="ngay_sinh" Type="date" />
+    <Property Name="gioi_tinh" Type="bit" />
+    <Property Name="noi_sinh" Type="nvarchar" MaxLength="1000" />
+    <Property Name="cmnd" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <Association Name="FK_tblDontu_tblLoaiDontu">
+    <End Role="tblLoaiDontu" Type="Self.tblLoaiDontu" Multiplicity="0..1" />
+    <End Role="tblDontu" Type="Self.tblDontu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblLoaiDontu">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblDontu">
+        <PropertyRef Name="FK_LoaiDonTuID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblDontu_tblNhanvien">
+    <End Role="tblNhanvien" Type="Self.tblNhanvien" Multiplicity="0..1" />
+    <End Role="tblDontu" Type="Self.tblDontu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblNhanvien">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblDontu">
+        <PropertyRef Name="FK_NhanvienID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblDontu_tblSinhvien">
+    <End Role="tblSinhvien" Type="Self.tblSinhvien" Multiplicity="0..1" />
+    <End Role="tblDontu" Type="Self.tblDontu" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblSinhvien">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblDontu">
+        <PropertyRef Name="FK_SinhvienID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblNhanvien_tblPhongban">
+    <End Role="tblPhongban" Type="Self.tblPhongban" Multiplicity="0..1" />
+    <End Role="tblNhanvien" Type="Self.tblNhanvien" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblPhongban">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="tblNhanvien">
+        <PropertyRef Name="FK_PhongbanID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TestDBModelStoreContainer">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblDontu" EntityType="Self.tblDontu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblLoaiDontu" EntityType="Self.tblLoaiDontu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblNhanvien" EntityType="Self.tblNhanvien" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblPhongban" EntityType="Self.tblPhongban" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblSinhvien" EntityType="Self.tblSinhvien" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_tblDontu_tblLoaiDontu" Association="Self.FK_tblDontu_tblLoaiDontu">
+      <End Role="tblLoaiDontu" EntitySet="tblLoaiDontu" />
+      <End Role="tblDontu" EntitySet="tblDontu" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblDontu_tblNhanvien" Association="Self.FK_tblDontu_tblNhanvien">
+      <End Role="tblNhanvien" EntitySet="tblNhanvien" />
+      <End Role="tblDontu" EntitySet="tblDontu" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblDontu_tblSinhvien" Association="Self.FK_tblDontu_tblSinhvien">
+      <End Role="tblSinhvien" EntitySet="tblSinhvien" />
+      <End Role="tblDontu" EntitySet="tblDontu" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblNhanvien_tblPhongban" Association="Self.FK_tblNhanvien_tblPhongban">
+      <End Role="tblPhongban" EntitySet="tblPhongban" />
+      <End Role="tblNhanvien" EntitySet="tblNhanvien" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

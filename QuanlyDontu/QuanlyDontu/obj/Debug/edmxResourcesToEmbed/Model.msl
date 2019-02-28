@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TestDBModelStoreContainer" CdmEntityContainer="TestDBEntities">
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="TestDBModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblDontus">
+      <EntityTypeMapping TypeName="TestDBModel.tblDontu">
+        <MappingFragment StoreEntitySet="tblDontu">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+          <ScalarProperty Name="Noidung" ColumnName="Noidung" />
+          <ScalarProperty Name="Ngaytao" ColumnName="Ngaytao" />
+          <ScalarProperty Name="Ngaycapnhat" ColumnName="Ngaycapnhat" />
+          <ScalarProperty Name="FK_LoaiDonTuID" ColumnName="FK_LoaiDonTuID" />
+          <ScalarProperty Name="FK_NhanvienID" ColumnName="FK_NhanvienID" />
+          <ScalarProperty Name="FK_SinhvienID" ColumnName="FK_SinhvienID" />
+          <ScalarProperty Name="Trangthai" ColumnName="Trangthai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblLoaiDontus">
+      <EntityTypeMapping TypeName="TestDBModel.tblLoaiDontu">
+        <MappingFragment StoreEntitySet="tblLoaiDontu">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TenLoai" ColumnName="TenLoai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblNhanviens">
+      <EntityTypeMapping TypeName="TestDBModel.tblNhanvien">
+        <MappingFragment StoreEntitySet="tblNhanvien">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ma_nhan_vien" ColumnName="ma_nhan_vien" />
+          <ScalarProperty Name="mat_khau" ColumnName="mat_khau" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="ho_va_ten" ColumnName="ho_va_ten" />
+          <ScalarProperty Name="so_dien_thoai" ColumnName="so_dien_thoai" />
+          <ScalarProperty Name="FK_PhongbanID" ColumnName="FK_PhongbanID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblPhongbans">
+      <EntityTypeMapping TypeName="TestDBModel.tblPhongban">
+        <MappingFragment StoreEntitySet="tblPhongban">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Ma_phong_ban" ColumnName="Ma_phong_ban" />
+          <ScalarProperty Name="Ten_phong_ban" ColumnName="Ten_phong_ban" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSinhviens">
+      <EntityTypeMapping TypeName="TestDBModel.tblSinhvien">
+        <MappingFragment StoreEntitySet="tblSinhvien">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ma_sinh_vien" ColumnName="ma_sinh_vien" />
+          <ScalarProperty Name="mat_khau" ColumnName="mat_khau" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="ho_va_ten" ColumnName="ho_va_ten" />
+          <ScalarProperty Name="ngay_sinh" ColumnName="ngay_sinh" />
+          <ScalarProperty Name="gioi_tinh" ColumnName="gioi_tinh" />
+          <ScalarProperty Name="noi_sinh" ColumnName="noi_sinh" />
+          <ScalarProperty Name="cmnd" ColumnName="cmnd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
