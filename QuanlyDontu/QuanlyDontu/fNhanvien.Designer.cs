@@ -305,7 +305,6 @@
             this.Column8.HeaderText = "Tên phòng ban";
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
-            this.Column8.Visible = false;
             this.Column8.Width = 150;
             // 
             // fNhanvien
