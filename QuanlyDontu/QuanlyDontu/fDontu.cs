@@ -16,9 +16,33 @@ namespace QuanlyDontu
         public fDontu()
         {
             InitializeComponent();
-            dgvNhanvien.AutoGenerateColumns = false;
-
+            dgvDontu.AutoGenerateColumns = false;
+                
             reloadDgv();
+            reloadLoaiDon();
+            reloadNV();
+            reloadSV();
+        }
+
+        private void reloadLoaiDon()
+        {
+            cbbLoaidon.DataSource = context.tblLoaiDontus.ToList();
+            cbbLoaidon.DisplayMember = "TenLoai";
+            cbbLoaidon.ValueMember = "ID";
+        }
+
+        private void reloadNV()
+        {
+            cbbNV.DataSource = context.tblNhanviens.ToList();
+            cbbNV.DisplayMember = "ho_va_ten";
+            cbbNV.ValueMember = "ID";
+        }
+
+        private void reloadSV()
+        {
+            cbbSV.DataSource = context.tblSinhviens.ToList();
+            cbbSV.DisplayMember = "ho_va_ten";
+            cbbSV.ValueMember = "ID";
         }
 
         private void textBox10_Enter(object sender, EventArgs e)
@@ -57,7 +81,7 @@ namespace QuanlyDontu
                 temp_result2 = context.tblNhanviens.Where(x => x.ID == int_keyword || x.so_dien_thoai == int_keyword).ToList();
             }
 
-            dgvNhanvien.DataSource = temp_result1.Union(temp_result2).ToList();
+            dgvDontu.DataSource = temp_result1.Union(temp_result2).ToList();
         }
 
         private void txtTimkiem_KeyUp(object sender, KeyEventArgs e)
@@ -78,21 +102,23 @@ namespace QuanlyDontu
 
         private void reloadDgv()
         {
-            dgvNhanvien.DataSource = context.tblNhanviens.ToList();
+            dgvDontu.DataSource = context.tblDontus.ToList();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            tblNhanvien nhanvien = new tblNhanvien();
+            tblDontu dontu = new tblDontu();
 
-            nhanvien.ma_nhan_vien = txtMaSV.Text;
-            nhanvien.mat_khau = txtMatkhau.Text;
-            nhanvien.email = txtEmail.Text;
-            nhanvien.ho_va_ten = txtHovaTen.Text;
-            nhanvien.so_dien_thoai = Convert.ToInt32(txtSodienthoai.Text);
-            nhanvien.FK_PhongbanID = Convert.ToInt32(cbbPhongban.SelectedValue);
+            dontu.Ten = txtTen.Text;
+            dontu.Noidung = txtNoidung.Text;
+            dontu.Ngaytao = dtpNgaytao.Value;
+            dontu.Ngaycapnhat = dtpNgaycapnhat.Value;
+            dontu.Trangthai = txtTrangthai.Text;
+            dontu.FK_LoaiDonTuID = Convert.ToInt32(cbbLoaidon.SelectedValue);
+            dontu.FK_NhanvienID = Convert.ToInt32(cbbNV.SelectedValue);
+            dontu.FK_SinhvienID = Convert.ToInt32(cbbSV.SelectedValue);
 
-            context.tblNhanviens.Add(nhanvien);
+            context.tblDontus.Add(dontu);
             context.SaveChanges();
 
             reloadDgv();
@@ -105,13 +131,14 @@ namespace QuanlyDontu
 
             if (row_index >= 0)
             {
-                txtID.Text = dgvNhanvien[0, row_index].Value.ToString();
-                txtMaSV.Text = dgvNhanvien[1, row_index].Value.ToString();
-                txtMatkhau.Text = dgvNhanvien[2, row_index].Value.ToString();
-                txtEmail.Text = dgvNhanvien[3, row_index].Value.ToString();
-                txtHovaTen.Text = dgvNhanvien[4, row_index].Value.ToString();
-                txtSodienthoai.Text = dgvNhanvien[5, row_index].Value.ToString();
-                cbbPhongban.SelectedIndex = Convert.ToInt32(dgvNhanvien[6, row_index].Value);
+                txtID.Text = dgvDontu[0, row_index].Value.ToString();
+                txtTen.Text = dgvDontu[1, row_index].Value.ToString();
+                txtNoidung.Text = dgvDontu[2, row_index].Value.ToString();
+                dtpNgaytao.Value = Convert.ToDateTime(dgvDontu[3, row_index].Value);
+                dtpNgaycapnhat.Value = Convert.ToDateTime(dgvDontu[4, row_index].Value);
+                cbbLoaidon.SelectedValue = dgvDontu[5, row_index].Value.ToString();
+                cbbNV.SelectedValue = dgvDontu[6, row_index].Value;
+                cbbSV.SelectedValue = dgvDontu[7, row_index].Value;
             }
         }
 
@@ -119,21 +146,23 @@ namespace QuanlyDontu
         {
             if (string.IsNullOrEmpty(txtID.Text))
             {
-                MessageBox.Show("Chọn 1 nhân viên để sửa");
+                MessageBox.Show("Chọn 1 dơn từ để sửa");
             }
             else
             {
                 var id = Convert.ToInt32(txtID.Text);
 
-                tblNhanvien nhanvien = context.tblNhanviens.Where(x => x.ID == id).FirstOrDefault();
+                tblDontu dontu = context.tblDontus.Where(x => x.ID == id).FirstOrDefault();
 
-                nhanvien.ma_nhan_vien = txtMaSV.Text;
-                nhanvien.mat_khau = txtMatkhau.Text;
-                nhanvien.email = txtEmail.Text;
-                nhanvien.ho_va_ten = txtHovaTen.Text;
-                nhanvien.so_dien_thoai = Convert.ToInt32(txtSodienthoai.Text);
-                nhanvien.FK_PhongbanID = Convert.ToInt32(cbbPhongban.SelectedValue);
-                
+                dontu.Ten = txtTen.Text;
+                dontu.Noidung = txtNoidung.Text;
+                dontu.Ngaytao = dtpNgaytao.Value;
+                dontu.Ngaycapnhat = dtpNgaycapnhat.Value;
+                dontu.Trangthai = txtTrangthai.Text;
+                dontu.FK_LoaiDonTuID = Convert.ToInt32(cbbLoaidon.SelectedValue);
+                dontu.FK_NhanvienID = Convert.ToInt32(cbbNV.SelectedValue);
+                dontu.FK_SinhvienID = Convert.ToInt32(cbbSV.SelectedValue);
+
                 context.SaveChanges();
 
                 reloadDgv();
@@ -144,24 +173,16 @@ namespace QuanlyDontu
         {
             if (string.IsNullOrEmpty(txtID.Text))
             {
-                MessageBox.Show("Chọn 1 nhân viên để xóa");
+                MessageBox.Show("Chọn 1 dơn từ để xóa");
             }
             else
             {
                 var id = Convert.ToInt32(txtID.Text);
 
-                tblNhanvien nhanvien = context.tblNhanviens.Where(x => x.ID == id).FirstOrDefault();
-                context.tblNhanviens.Remove(nhanvien);
+                tblDontu dontu = context.tblDontus.Where(x => x.ID == id).FirstOrDefault();
+                context.tblDontus.Remove(dontu);
                 context.SaveChanges();
                 reloadDgv();
-            }
-        }
-
-        private void dgvNhanvien_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            if (e.ColumnIndex == 7)
-            {
-                e.Value = ((tblPhongban)e.Value).Ten_phong_ban;
             }
         }
     }
