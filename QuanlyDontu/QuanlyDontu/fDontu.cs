@@ -107,21 +107,28 @@ namespace QuanlyDontu
 
         private void button1_Click(object sender, EventArgs e)
         {
-            tblDontu dontu = new tblDontu();
+            if (dtpNgaytao.Value > dtpNgayXuly.Value)
+            {
+                MessageBox.Show("Ngày tạo không được nhỏ hơn ngày cập nhật");
+            }
+            else
+            {
+                tblDontu dontu = new tblDontu();
 
-            dontu.Ten = txtTen.Text;
-            dontu.Noidung = txtNoidung.Text;
-            dontu.Ngaytao = dtpNgaytao.Value;
-            dontu.Ngaycapnhat = dtpNgaycapnhat.Value;
-            dontu.Trangthai = txtTrangthai.Text;
-            dontu.FK_LoaiDonTuID = Convert.ToInt32(cbbLoaidon.SelectedValue);
-            dontu.FK_NhanvienID = Convert.ToInt32(cbbNV.SelectedValue);
-            dontu.FK_SinhvienID = Convert.ToInt32(cbbSV.SelectedValue);
+                dontu.Ten = txtTen.Text;
+                dontu.Noidung = txtNoidung.Text;
+                dontu.Ngaytao = dtpNgaytao.Value;
+                dontu.Ngaycapnhat = dtpNgayXuly.Value;
+                dontu.Trangthai = txtTrangthai.Text;
+                dontu.FK_LoaiDonTuID = Convert.ToInt32(cbbLoaidon.SelectedValue);
+                dontu.FK_NhanvienID = Convert.ToInt32(cbbNV.SelectedValue);
+                dontu.FK_SinhvienID = Convert.ToInt32(cbbSV.SelectedValue);
 
-            context.tblDontus.Add(dontu);
-            context.SaveChanges();
+                context.tblDontus.Add(dontu);
+                context.SaveChanges();
 
-            reloadDgv();
+                reloadDgv();
+            }
         }
 
         private void dgvSinhvien_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -135,7 +142,7 @@ namespace QuanlyDontu
                 txtTen.Text = dgvDontu[1, row_index].Value.ToString();
                 txtNoidung.Text = dgvDontu[2, row_index].Value.ToString();
                 dtpNgaytao.Value = Convert.ToDateTime(dgvDontu[3, row_index].Value);
-                dtpNgaycapnhat.Value = Convert.ToDateTime(dgvDontu[4, row_index].Value);
+                dtpNgayXuly.Value = Convert.ToDateTime(dgvDontu[4, row_index].Value);
                 cbbLoaidon.SelectedValue = dgvDontu[5, row_index].Value.ToString();
                 cbbNV.SelectedValue = dgvDontu[6, row_index].Value;
                 cbbSV.SelectedValue = dgvDontu[7, row_index].Value;
@@ -150,22 +157,29 @@ namespace QuanlyDontu
             }
             else
             {
-                var id = Convert.ToInt32(txtID.Text);
+                if (dtpNgaytao.Value > dtpNgayXuly.Value)
+                {
+                    MessageBox.Show("Ngày tạo không được nhỏ hơn ngày cập nhật");
+                }
+                else
+                {
+                    var id = Convert.ToInt32(txtID.Text);
 
-                tblDontu dontu = context.tblDontus.Where(x => x.ID == id).FirstOrDefault();
+                    tblDontu dontu = context.tblDontus.Where(x => x.ID == id).FirstOrDefault();
 
-                dontu.Ten = txtTen.Text;
-                dontu.Noidung = txtNoidung.Text;
-                dontu.Ngaytao = dtpNgaytao.Value;
-                dontu.Ngaycapnhat = dtpNgaycapnhat.Value;
-                dontu.Trangthai = txtTrangthai.Text;
-                dontu.FK_LoaiDonTuID = Convert.ToInt32(cbbLoaidon.SelectedValue);
-                dontu.FK_NhanvienID = Convert.ToInt32(cbbNV.SelectedValue);
-                dontu.FK_SinhvienID = Convert.ToInt32(cbbSV.SelectedValue);
+                    dontu.Ten = txtTen.Text;
+                    dontu.Noidung = txtNoidung.Text;
+                    dontu.Ngaytao = dtpNgaytao.Value;
+                    dontu.Ngaycapnhat = dtpNgayXuly.Value;
+                    dontu.Trangthai = txtTrangthai.Text;
+                    dontu.FK_LoaiDonTuID = Convert.ToInt32(cbbLoaidon.SelectedValue);
+                    dontu.FK_NhanvienID = Convert.ToInt32(cbbNV.SelectedValue);
+                    dontu.FK_SinhvienID = Convert.ToInt32(cbbSV.SelectedValue);
 
-                context.SaveChanges();
+                    context.SaveChanges();
 
-                reloadDgv();
+                    reloadDgv();
+                }
             }
         }
 

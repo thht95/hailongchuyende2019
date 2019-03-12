@@ -63,5 +63,12 @@ namespace QuanlyDontu
             fDontu.Show();
             fDontu.MdiParent = this;
         }
+
+        private void chàoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            KiemtraDontu fkiemtra = new KiemtraDontu();
+            fkiemtra.Show();
+            fkiemtra.MdiParent = this;
+        }
     }
 }

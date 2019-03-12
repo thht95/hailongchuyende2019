@@ -63,7 +63,7 @@
             this.cbbSV = new System.Windows.Forms.ComboBox();
             this.cbbNV = new System.Windows.Forms.ComboBox();
             this.dtpNgaytao = new System.Windows.Forms.DateTimePicker();
-            this.dtpNgaycapnhat = new System.Windows.Forms.DateTimePicker();
+            this.dtpNgayXuly = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDontu)).BeginInit();
             this.SuspendLayout();
             // 
@@ -295,9 +295,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(48, 159);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(80, 13);
+            this.label5.Size = new System.Drawing.Size(59, 13);
             this.label5.TabIndex = 5;
-            this.label5.Text = " Ngày cập nhật";
+            this.label5.Text = " Ngày xử lý";
             // 
             // label6
             // 
@@ -379,18 +379,18 @@
             // 
             // dtpNgaycapnhat
             // 
-            this.dtpNgaycapnhat.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgaycapnhat.Location = new System.Drawing.Point(160, 153);
-            this.dtpNgaycapnhat.Name = "dtpNgaycapnhat";
-            this.dtpNgaycapnhat.Size = new System.Drawing.Size(100, 20);
-            this.dtpNgaycapnhat.TabIndex = 37;
+            this.dtpNgayXuly.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgayXuly.Location = new System.Drawing.Point(160, 153);
+            this.dtpNgayXuly.Name = "dtpNgaycapnhat";
+            this.dtpNgayXuly.Size = new System.Drawing.Size(100, 20);
+            this.dtpNgayXuly.TabIndex = 37;
             // 
             // fDontu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(995, 529);
-            this.Controls.Add(this.dtpNgaycapnhat);
+            this.Controls.Add(this.dtpNgayXuly);
             this.Controls.Add(this.dtpNgaytao);
             this.Controls.Add(this.cbbNV);
             this.Controls.Add(this.cbbSV);
@@ -459,6 +459,6 @@
         private System.Windows.Forms.ComboBox cbbSV;
         private System.Windows.Forms.ComboBox cbbNV;
         private System.Windows.Forms.DateTimePicker dtpNgaytao;
-        private System.Windows.Forms.DateTimePicker dtpNgaycapnhat;
+        private System.Windows.Forms.DateTimePicker dtpNgayXuly;
     }
 }

@@ -57,6 +57,7 @@
             this.chàoToolStripMenuItem.Name = "chàoToolStripMenuItem";
             this.chàoToolStripMenuItem.Size = new System.Drawing.Size(101, 20);
             this.chàoToolStripMenuItem.Text = "Kiểm tra đơn từ";
+            this.chàoToolStripMenuItem.Click += new System.EventHandler(this.chàoToolStripMenuItem_Click);
             // 
             // quảnLýToolStripMenuItem
             // 

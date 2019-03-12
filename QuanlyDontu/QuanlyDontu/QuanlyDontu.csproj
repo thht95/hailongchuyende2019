@@ -78,6 +78,12 @@
     <Compile Include="fPhongban.Designer.cs">
       <DependentUpon>fPhongban.cs</DependentUpon>
     </Compile>
+    <Compile Include="KiemtraDontu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KiemtraDontu.Designer.cs">
+      <DependentUpon>KiemtraDontu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fPhongban.resx">
       <DependentUpon>fPhongban.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KiemtraDontu.resx">
+      <DependentUpon>KiemtraDontu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
