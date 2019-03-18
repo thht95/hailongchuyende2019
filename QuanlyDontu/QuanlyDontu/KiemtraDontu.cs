@@ -25,7 +25,7 @@ namespace QuanlyDontu
             if (MainForm.type == "nv")
             {
                 var list = context.tblDontus.Where(x => x.ID == iTxt).ToList();
-                dataGridView1.DataSource = list;
+                dgvDontu.DataSource = list;
             }
             else
             {
