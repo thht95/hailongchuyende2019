@@ -199,5 +199,27 @@ namespace QuanlyDontu
                 reloadDgv();
             }
         }
+
+        private void dgvDontu_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                if (e.ColumnIndex == 10)
+                {
+                    e.Value = ((tblNhanvien)e.Value).ho_va_ten;
+                }
+
+                if (e.ColumnIndex == 9)
+                {
+                    e.Value = ((tblLoaiDontu)e.Value).TenLoai;
+                }
+
+                if (e.ColumnIndex == 11)
+                {
+                    e.Value = ((tblSinhvien)e.Value).ho_va_ten;
+                }
+
+            }
+        }
     }
 }
