@@ -70,5 +70,12 @@ namespace QuanlyDontu
             fkiemtra.Show();
             fkiemtra.MdiParent = this;
         }
+
+        private void sinhVieToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Thongke1 thongke = new Thongke1();
+            thongke.Show();
+            thongke.MdiParent = this;
+        }
     }
 }
