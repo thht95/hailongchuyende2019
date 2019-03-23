@@ -68,17 +68,15 @@ namespace QuanlyDontu
             int int_keyword;
 
             var checkInt = int.TryParse(keyword, out int_keyword);
-            var temp_result1 = context.tblNhanviens.Where(x => x.mat_khau.Contains(keyword)
-                                    || x.ma_nhan_vien.Contains(keyword)
-                                    || x.ho_va_ten.Contains(keyword)
-                                    || x.email.Contains(keyword)
+            var temp_result1 = context.tblDontus.Where(x => x.Noidung.Contains(keyword)
+                                    || x.Ten.Contains(keyword)
             ).ToList();
 
-            var temp_result2 = new List<tblNhanvien>();
+            var temp_result2 = new List<tblDontu>();
 
             if (checkInt)
             {
-                temp_result2 = context.tblNhanviens.Where(x => x.ID == int_keyword || x.so_dien_thoai == int_keyword).ToList();
+                temp_result2 = context.tblDontus.Where(x => x.FK_LoaiDonTuID == int_keyword || x.FK_NhanvienID == int_keyword || x.FK_SinhvienID == int_keyword).ToList();
             }
 
             dgvDontu.DataSource = temp_result1.Union(temp_result2).ToList();
@@ -206,17 +204,20 @@ namespace QuanlyDontu
             {
                 if (e.ColumnIndex == 10)
                 {
-                    e.Value = ((tblNhanvien)e.Value).ho_va_ten;
+                    if (e.Value != null)
+                        e.Value = ((tblNhanvien)e.Value).ho_va_ten;
                 }
 
                 if (e.ColumnIndex == 9)
                 {
-                    e.Value = ((tblLoaiDontu)e.Value).TenLoai;
+                    if (e.Value != null)
+                        e.Value = ((tblLoaiDontu)e.Value).TenLoai;
                 }
 
                 if (e.ColumnIndex == 11)
                 {
-                    e.Value = ((tblSinhvien)e.Value).ho_va_ten;
+                    if (e.Value != null)
+                        e.Value = ((tblSinhvien)e.Value).ho_va_ten;
                 }
 
             }
