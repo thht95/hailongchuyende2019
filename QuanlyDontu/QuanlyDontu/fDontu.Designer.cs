@@ -29,18 +29,6 @@
         private void InitializeComponent()
         {
             this.dgvDontu = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -59,11 +47,23 @@
             this.cbbLoaidon = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtTrangthai = new System.Windows.Forms.TextBox();
             this.cbbSV = new System.Windows.Forms.ComboBox();
             this.cbbNV = new System.Windows.Forms.ComboBox();
             this.dtpNgaytao = new System.Windows.Forms.DateTimePicker();
             this.dtpNgayXuly = new System.Windows.Forms.DateTimePicker();
+            this.cbbTrangthai = new System.Windows.Forms.ComboBox();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDontu)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,86 +87,11 @@
             this.Column11});
             this.dgvDontu.Location = new System.Drawing.Point(1, 336);
             this.dgvDontu.Name = "dgvDontu";
+            this.dgvDontu.ReadOnly = true;
             this.dgvDontu.Size = new System.Drawing.Size(994, 194);
             this.dgvDontu.TabIndex = 0;
             this.dgvDontu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSinhvien_CellClick);
             this.dgvDontu.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvDontu_CellFormatting);
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "ID";
-            this.Column1.HeaderText = "ID";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "Ten";
-            this.Column2.HeaderText = "Tên";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "Noidung";
-            this.Column3.HeaderText = "Nội dung";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "Ngaytao";
-            this.Column4.HeaderText = "Ngày tạo";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "Ngaycapnhat";
-            this.Column5.HeaderText = "Ngày cập nhật";
-            this.Column5.Name = "Column5";
-            // 
-            // Column12
-            // 
-            this.Column12.DataPropertyName = "Trangthai";
-            this.Column12.HeaderText = "Trang thái";
-            this.Column12.Name = "Column12";
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "FK_LoaiDonTuID";
-            this.Column6.HeaderText = "Mã loại đơn";
-            this.Column6.Name = "Column6";
-            this.Column6.Visible = false;
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "FK_NhanvienID";
-            this.Column7.HeaderText = "Mã nhân viên";
-            this.Column7.Name = "Column7";
-            this.Column7.Visible = false;
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "FK_SinhvienID";
-            this.Column8.HeaderText = "Mã sinh viên";
-            this.Column8.Name = "Column8";
-            this.Column8.Visible = false;
-            this.Column8.Width = 150;
-            // 
-            // Column9
-            // 
-            this.Column9.DataPropertyName = "tblLoaiDonTu";
-            this.Column9.HeaderText = "Tên loại đơn";
-            this.Column9.Name = "Column9";
-            // 
-            // Column10
-            // 
-            this.Column10.DataPropertyName = "tblNhanvien";
-            this.Column10.HeaderText = "Tên nhân viên";
-            this.Column10.Name = "Column10";
-            // 
-            // Column11
-            // 
-            this.Column11.DataPropertyName = "tblSinhvien";
-            this.Column11.HeaderText = "Tên sinh viên";
-            this.Column11.Name = "Column11";
             // 
             // label1
             // 
@@ -307,6 +232,7 @@
             // 
             // cbbLoaidon
             // 
+            this.cbbLoaidon.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbLoaidon.FormattingEnabled = true;
             this.cbbLoaidon.Items.AddRange(new object[] {
             "Nữ",
@@ -335,15 +261,9 @@
             this.label9.TabIndex = 27;
             this.label9.Text = "Tên sinh viên";
             // 
-            // txtTrangthai
-            // 
-            this.txtTrangthai.Location = new System.Drawing.Point(449, 20);
-            this.txtTrangthai.Name = "txtTrangthai";
-            this.txtTrangthai.Size = new System.Drawing.Size(100, 20);
-            this.txtTrangthai.TabIndex = 32;
-            // 
             // cbbSV
             // 
+            this.cbbSV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbSV.FormattingEnabled = true;
             this.cbbSV.Location = new System.Drawing.Point(449, 122);
             this.cbbSV.Name = "cbbSV";
@@ -352,6 +272,7 @@
             // 
             // cbbNV
             // 
+            this.cbbNV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbNV.FormattingEnabled = true;
             this.cbbNV.Location = new System.Drawing.Point(449, 88);
             this.cbbNV.Name = "cbbNV";
@@ -374,16 +295,116 @@
             this.dtpNgayXuly.Size = new System.Drawing.Size(100, 20);
             this.dtpNgayXuly.TabIndex = 37;
             // 
+            // cbbTrangthai
+            // 
+            this.cbbTrangthai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbbTrangthai.FormattingEnabled = true;
+            this.cbbTrangthai.Items.AddRange(new object[] {
+            "Đã xử lý",
+            "Chờ xử lý"});
+            this.cbbTrangthai.Location = new System.Drawing.Point(449, 20);
+            this.cbbTrangthai.Name = "cbbTrangthai";
+            this.cbbTrangthai.Size = new System.Drawing.Size(100, 21);
+            this.cbbTrangthai.TabIndex = 38;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "ID";
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Ten";
+            this.Column2.HeaderText = "Tên";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "Noidung";
+            this.Column3.HeaderText = "Nội dung";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "Ngaytao";
+            this.Column4.HeaderText = "Ngày tạo";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "Ngaycapnhat";
+            this.Column5.HeaderText = "Ngày cập nhật";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            // 
+            // Column12
+            // 
+            this.Column12.DataPropertyName = "Trangthai";
+            this.Column12.HeaderText = "Trạng thái";
+            this.Column12.Name = "Column12";
+            this.Column12.ReadOnly = true;
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "FK_LoaiDonTuID";
+            this.Column6.HeaderText = "Mã loại đơn";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Visible = false;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "FK_NhanvienID";
+            this.Column7.HeaderText = "Mã nhân viên";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            this.Column7.Visible = false;
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "FK_SinhvienID";
+            this.Column8.HeaderText = "Mã sinh viên";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            this.Column8.Visible = false;
+            this.Column8.Width = 150;
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "tblLoaiDonTu";
+            this.Column9.HeaderText = "Tên loại đơn";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            // 
+            // Column10
+            // 
+            this.Column10.DataPropertyName = "tblNhanvien";
+            this.Column10.HeaderText = "Tên nhân viên";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            // 
+            // Column11
+            // 
+            this.Column11.DataPropertyName = "tblSinhvien";
+            this.Column11.HeaderText = "Tên sinh viên";
+            this.Column11.Name = "Column11";
+            this.Column11.ReadOnly = true;
+            // 
             // fDontu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(995, 529);
+            this.Controls.Add(this.cbbTrangthai);
             this.Controls.Add(this.dtpNgayXuly);
             this.Controls.Add(this.dtpNgaytao);
             this.Controls.Add(this.cbbNV);
             this.Controls.Add(this.cbbSV);
-            this.Controls.Add(this.txtTrangthai);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.cbbLoaidon);
@@ -432,11 +453,11 @@
         private System.Windows.Forms.ComboBox cbbLoaidon;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtTrangthai;
         private System.Windows.Forms.ComboBox cbbSV;
         private System.Windows.Forms.ComboBox cbbNV;
         private System.Windows.Forms.DateTimePicker dtpNgaytao;
         private System.Windows.Forms.DateTimePicker dtpNgayXuly;
+        private System.Windows.Forms.ComboBox cbbTrangthai;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;

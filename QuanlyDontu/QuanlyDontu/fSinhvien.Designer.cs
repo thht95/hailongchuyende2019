@@ -85,6 +85,7 @@
             this.dgvSinhvien.Size = new System.Drawing.Size(945, 194);
             this.dgvSinhvien.TabIndex = 0;
             this.dgvSinhvien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSinhvien_CellClick);
+            this.dgvSinhvien.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvSinhvien_CellFormatting);
             // 
             // Column1
             // 
@@ -300,10 +301,10 @@
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
+            // btnXoa
             // 
             this.btnXoa.Location = new System.Drawing.Point(679, 152);
-            this.btnXoa.Name = "button3";
+            this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(73, 51);
             this.btnXoa.TabIndex = 21;
             this.btnXoa.Text = "Xóa";
@@ -334,6 +335,7 @@
             // 
             // cbbGioitinh
             // 
+            this.cbbGioitinh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbbGioitinh.FormattingEnabled = true;
             this.cbbGioitinh.Items.AddRange(new object[] {
             "Nữ",

@@ -117,7 +117,7 @@ namespace QuanlyDontu
                 dontu.Noidung = txtNoidung.Text;
                 dontu.Ngaytao = dtpNgaytao.Value;
                 dontu.Ngaycapnhat = dtpNgayXuly.Value;
-                dontu.Trangthai = txtTrangthai.Text;
+                dontu.Trangthai = cbbTrangthai.Text;
                 dontu.FK_LoaiDonTuID = Convert.ToInt32(cbbLoaidon.SelectedValue);
                 dontu.FK_NhanvienID = Convert.ToInt32(cbbNV.SelectedValue);
                 dontu.FK_SinhvienID = Convert.ToInt32(cbbSV.SelectedValue);
@@ -169,7 +169,7 @@ namespace QuanlyDontu
                     dontu.Noidung = txtNoidung.Text;
                     dontu.Ngaytao = dtpNgaytao.Value;
                     dontu.Ngaycapnhat = dtpNgayXuly.Value;
-                    dontu.Trangthai = txtTrangthai.Text;
+                    dontu.Trangthai = cbbTrangthai.Text;
                     dontu.FK_LoaiDonTuID = Convert.ToInt32(cbbLoaidon.SelectedValue);
                     dontu.FK_NhanvienID = Convert.ToInt32(cbbNV.SelectedValue);
                     dontu.FK_SinhvienID = Convert.ToInt32(cbbSV.SelectedValue);
@@ -201,25 +201,26 @@ namespace QuanlyDontu
         private void dgvDontu_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             if (e.RowIndex > -1)
-            {
-                if (e.ColumnIndex == 10)
+           {
+                if (e.ColumnIndex == 3 || e.ColumnIndex == 4)
+                {
+                    //e.Value = string.Format("{0:d/M/yyyy}", e.Value);
+                }
+                else if (e.ColumnIndex == 10)
                 {
                     if (e.Value != null)
                         e.Value = ((tblNhanvien)e.Value).ho_va_ten;
                 }
-
-                if (e.ColumnIndex == 9)
+                else if (e.ColumnIndex == 9)
                 {
                     if (e.Value != null)
                         e.Value = ((tblLoaiDontu)e.Value).TenLoai;
                 }
-
-                if (e.ColumnIndex == 11)
+                else if (e.ColumnIndex == 11)
                 {
                     if (e.Value != null)
                         e.Value = ((tblSinhvien)e.Value).ho_va_ten;
                 }
-
             }
         }
 

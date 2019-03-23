@@ -187,5 +187,16 @@ namespace QuanlyDontu
                 reloadDgv();
             }
         }
+
+        private void dgvSinhvien_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.RowIndex > -1)
+            {
+                if (e.ColumnIndex == 5)
+                {
+                    e.Value = string.Format("{0:d/M/yyyy}", e.Value);
+                }
+            }
+        }
     }
 }
