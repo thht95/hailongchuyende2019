@@ -107,7 +107,7 @@ namespace QuanlyDontu
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (dtpNgaytao.Value > dtpNgayXuly.Value)
+            if (dtpNgaytao.Value >= dtpNgayXuly.Value)
             {
                 MessageBox.Show("Ngày tạo không được nhỏ hơn ngày cập nhật");
             }
@@ -157,7 +157,7 @@ namespace QuanlyDontu
             }
             else
             {
-                if (dtpNgaytao.Value > dtpNgayXuly.Value)
+                if (dtpNgaytao.Value >= dtpNgayXuly.Value)
                 {
                     MessageBox.Show("Ngày tạo không được nhỏ hơn ngày cập nhật");
                 }
@@ -220,6 +220,11 @@ namespace QuanlyDontu
                 }
 
             }
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

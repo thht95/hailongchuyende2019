@@ -29,6 +29,18 @@
         private void InitializeComponent()
         {
             this.dgvDontu = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -52,18 +64,6 @@
             this.cbbNV = new System.Windows.Forms.ComboBox();
             this.dtpNgaytao = new System.Windows.Forms.DateTimePicker();
             this.dtpNgayXuly = new System.Windows.Forms.DateTimePicker();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDontu)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,11 +87,86 @@
             this.Column11});
             this.dgvDontu.Location = new System.Drawing.Point(1, 336);
             this.dgvDontu.Name = "dgvDontu";
-            this.dgvDontu.ReadOnly = true;
             this.dgvDontu.Size = new System.Drawing.Size(994, 194);
             this.dgvDontu.TabIndex = 0;
             this.dgvDontu.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSinhvien_CellClick);
             this.dgvDontu.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvDontu_CellFormatting);
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "ID";
+            this.Column1.HeaderText = "ID";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.DataPropertyName = "Ten";
+            this.Column2.HeaderText = "Tên";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.DataPropertyName = "Noidung";
+            this.Column3.HeaderText = "Nội dung";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.DataPropertyName = "Ngaytao";
+            this.Column4.HeaderText = "Ngày tạo";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.DataPropertyName = "Ngaycapnhat";
+            this.Column5.HeaderText = "Ngày cập nhật";
+            this.Column5.Name = "Column5";
+            // 
+            // Column12
+            // 
+            this.Column12.DataPropertyName = "Trangthai";
+            this.Column12.HeaderText = "Trang thái";
+            this.Column12.Name = "Column12";
+            // 
+            // Column6
+            // 
+            this.Column6.DataPropertyName = "FK_LoaiDonTuID";
+            this.Column6.HeaderText = "Mã loại đơn";
+            this.Column6.Name = "Column6";
+            this.Column6.Visible = false;
+            // 
+            // Column7
+            // 
+            this.Column7.DataPropertyName = "FK_NhanvienID";
+            this.Column7.HeaderText = "Mã nhân viên";
+            this.Column7.Name = "Column7";
+            this.Column7.Visible = false;
+            // 
+            // Column8
+            // 
+            this.Column8.DataPropertyName = "FK_SinhvienID";
+            this.Column8.HeaderText = "Mã sinh viên";
+            this.Column8.Name = "Column8";
+            this.Column8.Visible = false;
+            this.Column8.Width = 150;
+            // 
+            // Column9
+            // 
+            this.Column9.DataPropertyName = "tblLoaiDonTu";
+            this.Column9.HeaderText = "Tên loại đơn";
+            this.Column9.Name = "Column9";
+            // 
+            // Column10
+            // 
+            this.Column10.DataPropertyName = "tblNhanvien";
+            this.Column10.HeaderText = "Tên nhân viên";
+            this.Column10.Name = "Column10";
+            // 
+            // Column11
+            // 
+            this.Column11.DataPropertyName = "tblSinhvien";
+            this.Column11.HeaderText = "Tên sinh viên";
+            this.Column11.Name = "Column11";
             // 
             // label1
             // 
@@ -226,9 +301,9 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(337, 57);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(66, 13);
+            this.label7.Size = new System.Drawing.Size(67, 13);
             this.label7.TabIndex = 7;
-            this.label7.Text = " Mã loại đơn";
+            this.label7.Text = "Tên loại đơn";
             // 
             // cbbLoaidon
             // 
@@ -246,18 +321,19 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(337, 95);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(72, 13);
+            this.label8.Size = new System.Drawing.Size(76, 13);
             this.label8.TabIndex = 26;
-            this.label8.Text = "Mã nhân viên";
+            this.label8.Text = "Tên nhân viên";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(337, 129);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(67, 13);
+            this.label9.Size = new System.Drawing.Size(71, 13);
             this.label9.TabIndex = 27;
-            this.label9.Text = "Mã sinh viên";
+            this.label9.Text = "Tên sinh viên";
             // 
             // txtTrangthai
             // 
@@ -297,94 +373,6 @@
             this.dtpNgayXuly.Name = "dtpNgayXuly";
             this.dtpNgayXuly.Size = new System.Drawing.Size(100, 20);
             this.dtpNgayXuly.TabIndex = 37;
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "ID";
-            this.Column1.HeaderText = "ID";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
-            // Column2
-            // 
-            this.Column2.DataPropertyName = "Ten";
-            this.Column2.HeaderText = "Tên";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.DataPropertyName = "Noidung";
-            this.Column3.HeaderText = "Nội dung";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.DataPropertyName = "Ngaytao";
-            this.Column4.HeaderText = "Ngày tạo";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.DataPropertyName = "Ngaycapnhat";
-            this.Column5.HeaderText = "Ngày cập nhật";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            // 
-            // Column12
-            // 
-            this.Column12.DataPropertyName = "Trangthai";
-            this.Column12.HeaderText = "Trang thái";
-            this.Column12.Name = "Column12";
-            this.Column12.ReadOnly = true;
-            // 
-            // Column6
-            // 
-            this.Column6.DataPropertyName = "FK_LoaiDonTuID";
-            this.Column6.HeaderText = "Mã loại đơn";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Visible = false;
-            // 
-            // Column7
-            // 
-            this.Column7.DataPropertyName = "FK_NhanvienID";
-            this.Column7.HeaderText = "Mã nhân viên";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            this.Column7.Visible = false;
-            // 
-            // Column8
-            // 
-            this.Column8.DataPropertyName = "FK_SinhvienID";
-            this.Column8.HeaderText = "Mã sinh viên";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            this.Column8.Visible = false;
-            this.Column8.Width = 150;
-            // 
-            // Column9
-            // 
-            this.Column9.DataPropertyName = "tblLoaiDonTu";
-            this.Column9.HeaderText = "Tên loại đơn";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            // 
-            // Column10
-            // 
-            this.Column10.DataPropertyName = "tblNhanvien";
-            this.Column10.HeaderText = "Tên nhân viên";
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            // 
-            // Column11
-            // 
-            this.Column11.DataPropertyName = "tblSinhvien";
-            this.Column11.HeaderText = "Tên sinh viên";
-            this.Column11.Name = "Column11";
-            this.Column11.ReadOnly = true;
             // 
             // fDontu
             // 

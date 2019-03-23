@@ -31,6 +31,7 @@
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvDontu = new System.Windows.Forms.DataGridView();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,7 +44,6 @@
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDontu)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,6 +86,17 @@
             this.dgvDontu.ReadOnly = true;
             this.dgvDontu.Size = new System.Drawing.Size(994, 194);
             this.dgvDontu.TabIndex = 0;
+            this.dgvDontu.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvDontu_CellFormatting);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.Location = new System.Drawing.Point(314, 25);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(75, 23);
+            this.btnSearch.TabIndex = 3;
+            this.btnSearch.Text = "Tìm kiếm";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // Column1
             // 
@@ -135,6 +146,7 @@
             this.Column6.HeaderText = "Mã loại đơn";
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
+            this.Column6.Visible = false;
             // 
             // Column7
             // 
@@ -142,6 +154,7 @@
             this.Column7.HeaderText = "Mã nhân viên";
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
+            this.Column7.Visible = false;
             // 
             // Column8
             // 
@@ -149,6 +162,7 @@
             this.Column8.HeaderText = "Mã sinh viên";
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
+            this.Column8.Visible = false;
             this.Column8.Width = 150;
             // 
             // Column9
@@ -157,7 +171,6 @@
             this.Column9.HeaderText = "Tên loại đơn";
             this.Column9.Name = "Column9";
             this.Column9.ReadOnly = true;
-            this.Column9.Visible = false;
             // 
             // Column10
             // 
@@ -165,7 +178,6 @@
             this.Column10.HeaderText = "Tên nhân viên";
             this.Column10.Name = "Column10";
             this.Column10.ReadOnly = true;
-            this.Column10.Visible = false;
             // 
             // Column11
             // 
@@ -173,17 +185,6 @@
             this.Column11.HeaderText = "Tên sinh viên";
             this.Column11.Name = "Column11";
             this.Column11.ReadOnly = true;
-            this.Column11.Visible = false;
-            // 
-            // btnSearch
-            // 
-            this.btnSearch.Location = new System.Drawing.Point(314, 25);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(75, 23);
-            this.btnSearch.TabIndex = 3;
-            this.btnSearch.Text = "Tìm kiếm";
-            this.btnSearch.UseVisualStyleBackColor = true;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // KiemtraDontu
             // 
