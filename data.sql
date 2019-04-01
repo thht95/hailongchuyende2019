@@ -26,3 +26,6 @@ select * from tblLoaiDontu
 
 
 select * from tblLoaiDontu
+
+
+select * from tblDontu
