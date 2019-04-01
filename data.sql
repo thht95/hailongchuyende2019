@@ -1,4 +1,4 @@
-insert into tblNhanvien values ('1', '1', 'nv1@gmail.com', N'Nhân Viên Một', 973552857, 1)
+﻿insert into tblNhanvien values ('1', '1', 'nv1@gmail.com', N'Nhân Viên Một', 973552857, 1)
 insert into tblNhanvien values ('2', '2', 'nv2@gmail.com', N'Nhân Viên Hai', 373552857, 1)
 insert into tblNhanvien values ('3', '3', 'nv3@gmail.com', N'Nhân Viên Ba', 373552857, 2)
 
@@ -24,3 +24,5 @@ insert into tblLoaiDontu values (N'Đơn xin đóng học phí muộn')
 
 select * from tblLoaiDontu
 
+
+select * from tblLoaiDontu
