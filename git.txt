@@ -10,12 +10,13 @@ cau 2. xyz abc
 sau do save lai
 
 sau do git bash here
-git config --global user.email "long@gmail.com"
+git config --global user.email "nguyenhailong7795@gmail.com"
 git config --global user.name "chuatrooi"
 git add git.txt
 git commit -m '.'
 git push origin master
 
 neu no hien ra form dang nhap thi paste cai o tren vao. de y ko bi thua dau cach
+em dien dung email cho anh
 
-
+sua linh tinh
