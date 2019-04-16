@@ -2,3 +2,9 @@ git pull origin master
 git checkout -f
 https://github.com/thht95/hailongchuyende2019/commits/master
 e1bb49698886810b44a47c98ebff5749df271c4a
+
+viet cau hoi vao day.
+vi du:
+cau 1. abc xyz
+cau 2. xyz abc
+sau do save laia
