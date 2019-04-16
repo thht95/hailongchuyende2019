@@ -2,7 +2,7 @@ git pull origin master
 git checkout -f
 https://github.com/thht95/hailongchuyende2019/commits/master
 thht95
-a tronger password.
+a stronger password.
 
 viet cau hoi vao day.
 vi du:
@@ -21,3 +21,5 @@ neu no hien ra form dang nhap thi paste cai o tren vao. de y ko bi thua dau cach
 em dien dung email cho anh
 
 test thu xem the nao
+
+test thu lai lan nua xem the nao
