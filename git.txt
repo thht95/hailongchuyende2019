@@ -1,7 +1,8 @@
 git pull origin master
 git checkout -f
 https://github.com/thht95/hailongchuyende2019/commits/master
-thht95/a tronger password.
+thht95
+a tronger password.
 
 viet cau hoi vao day.
 vi du:
