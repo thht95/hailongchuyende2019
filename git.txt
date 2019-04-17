@@ -26,3 +26,5 @@ thay moi cho 1 cau thoi a oi
 cau 1: kiem tra loi nhap trung du lieu o bang sinh vien
 
 cau 2: chuyen nhan vien tu phong ban nay sang phong ban khac
+
+cau 3: chinh ngay gio o bang don tu khop voi ngay gio tren may tinh
