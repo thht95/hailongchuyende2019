@@ -104,23 +104,38 @@ namespace QuanlyDontu
             dgvSinhvien.DataSource = context.tblSinhviens.ToList();
         }
 
+        private bool checkTrungSV(string masv)
+        {
+            var check = context.tblSinhviens.Where(x => x.ma_sinh_vien == masv).FirstOrDefault();
+            return (check != null);
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
-            tblSinhvien sinhvien = new tblSinhvien();
+            if (checkTrungSV(txtMaSV.Text))
+            {
+                MessageBox.Show("Đã có mã sinh viên này");
+            }
+            else
+            {
+                tblSinhvien sinhvien = new tblSinhvien();
 
-            sinhvien.ma_sinh_vien = txtMaSV.Text;
-            sinhvien.mat_khau = txtMatkhau.Text;
-            sinhvien.email = txtEmail.Text;
-            sinhvien.ho_va_ten = txtHovaTen.Text;
-            sinhvien.ngay_sinh = dtpNgaysinh.Value.Date;
-            sinhvien.gioi_tinh = Convert.ToBoolean(cbbGioitinh.SelectedIndex);
-            sinhvien.noi_sinh = txtNoisinh.Text;
-            sinhvien.cmnd = txtCMND.Text;
+                sinhvien.ma_sinh_vien = txtMaSV.Text;
+                sinhvien.mat_khau = txtMatkhau.Text;
+                sinhvien.email = txtEmail.Text;
+                sinhvien.ho_va_ten = txtHovaTen.Text;
+                sinhvien.ngay_sinh = dtpNgaysinh.Value.Date;
+                sinhvien.gioi_tinh = Convert.ToBoolean(cbbGioitinh.SelectedIndex);
+                sinhvien.noi_sinh = txtNoisinh.Text;
+                sinhvien.cmnd = txtCMND.Text;
 
-            context.tblSinhviens.Add(sinhvien);
-            context.SaveChanges();
+                context.tblSinhviens.Add(sinhvien);
+                context.SaveChanges();
 
-            reloadDgv();
+                reloadDgv();
+            }
+
+            
         }
 
         private void dgvSinhvien_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -152,9 +167,16 @@ namespace QuanlyDontu
             else
             {
                 var id = Convert.ToInt32(txtID.Text);
-
-
                 tblSinhvien sinhvien = context.tblSinhviens.Where(x => x.ID == id).FirstOrDefault();
+
+                if (sinhvien.ma_sinh_vien != txtMaSV.Text)
+                {
+                    if (checkTrungSV(txtMaSV.Text))
+                    {
+                        MessageBox.Show("Đã có mã sinh viên này");
+                        return;
+                    }
+                }
 
                 sinhvien.ma_sinh_vien = txtMaSV.Text;
                 sinhvien.mat_khau = txtMatkhau.Text;
@@ -168,6 +190,7 @@ namespace QuanlyDontu
                 context.SaveChanges();
 
                 reloadDgv();
+
             }
         }
 
